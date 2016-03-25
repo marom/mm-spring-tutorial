@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MailController {
 
-	@Resource(name = "smtpMailSender")
+	@Resource
 	private MailSender mailSender;
 
 	@RequestMapping("/mail")
