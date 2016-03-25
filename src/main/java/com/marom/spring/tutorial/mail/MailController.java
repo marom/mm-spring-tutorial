@@ -1,12 +1,15 @@
 package com.marom.spring.tutorial.mail;
 
+import javax.annotation.Resource;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MailController {
 
-	private MailSender mailSender = new MockMailSender();
+	@Resource(name = "smtpMailSender")
+	private MailSender mailSender;
 
 	@RequestMapping("/mail")
 	public String sendMail() {
